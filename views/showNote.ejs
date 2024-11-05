@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-200 font-[gilroy]">
+    <nav class=" py-2 px-4">
+        <div class="container flex justify-between items-center">
+            <div class="left"><a href="/"><h1 class="text-2xl font-bold">Notes</h1></a></div>
+            <div class="right">
+                <a href="/" class=" text-lg font-medium mr-4">Home</a>
+                <a href="/newNote" class=" text-lg font-medium">Create New Note</a>
+            </div>
+        </div>
+    </nav>
+<div class="h-screen flex justify-center items-center bg-zinc-200">
+    <div class="w-1/2 rounded-md p-4 bg-zinc-100 ">
+        <div class="flex justify-between items-start"><h2 class="text-2xl font-bold  mb-4"><%= filename %></h2> <div class="tags flex items-center gap-4 font-medium"><a class="text-lg text-red-600"
+             href="/Delete/<%=filename%>">Delete</a> <a class="text-lg text-blue-800" href="/edit/<%=filename%>">Edit</a></div> </div>
+        <p class="text-sm text-gray-700"><%= data %></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-200 font-[gilroy]">
+<nav class=" py-2 px-4">
+    <div class="container flex justify-between items-center">
+        <div class="left"><a href="/"><h1 class="text-2xl font-bold">Notes</h1></a></div>
+        <div class="right">
+            <a href="/" class=" text-lg font-medium mr-4">Home</a>
+            <a href="/newNote" class=" text-lg font-medium">Create New Note</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container  py-4 flex px-10">
+    <div class="w-full">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">My Notes</h2>
+        <div class="flex flex-wrap gap-10">
+            <!-- Start of Note Card -->
+            <% files.forEach(function(file){ %>
+               <div class="bg-zinc-100 shadow overflow-hidden sm:rounded-lg p-4 w-64">
+                <p class="text-sm font-medium text-gray-500">26-10-2002 <span class="text-[11px] ml-1">12:30 pm</span></p>
+                <a href="/note/<%=file.name%>" class="block mt-2">
+                    <p class="text-lg font-medium text-gray-900"><%=file.name%></p>
+                    <div class="flex items-end font-medium  mt-2">
+                       <div class="left flex gap-2 justify-start items-end">
+                        <p class=" text-sm text-blue-700">View Note</p>
+                        <a class=" text-sm text-red-700" href="/Delete/<%=file.name%>">Delete</a>
+                    </div>
+                        <a class="text-sm ml-20" href="/edit/<%=file.name%>">Edit</a>
+                       </div>
+                </a>
+                
+            </div>
+           <% }) %>
+           
+        </div>
+    </div>
+</div>
+</body>
+</html>
